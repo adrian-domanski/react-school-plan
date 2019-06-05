@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+nav {
+  min-height: 66px !important;
+}
+
+.btn.waves-effect {
+  display: block;
+  margin: 0 auto;
+}
+
+.select-wrapper input.select-dropdown {
+  color: #9E9EAB;
+}
+
+.select-active {
+  border-bottom: 2px solid #4CAF50 !important;
+}
+
+#right {
+  height: 520px;
+  width: 405px;
+  border-color: #3b5998;
+  border-bottom-left-radius: 20px;
+  position: fixed;
+  bottom: 400px;
+  top: 30vh;
+}
+
+#right>a {
+  width: 80px;
+  text-align: center;
+  background-color: #3b5998;
+  bottom: calc(100% - 78px) !important;
+}
+
+/* Fb widget */
+.op {
+  opacity: 0;
+  z-index: 10;
+}
+
+/* Task cards */
+
+.task_info {
+  background-color: #e0f7fa !important;
+}
+
+.task_all {
+  background-color: #ffebee !important;
+}
+
+span.task_all {
+  color: red !important;
+}
+
+span.task_eko {
+  color: green !important;
+}
+
+span.task_info {
+  color: #2196F3 !important;
+}
+
+.task_eko {
+  background-color: #e8f5e9 !important;
+}
+
+.card .card-action span {
+  font-weight: bold;
+}
+
+a.active {
+  position: relative;
+  transition: color .5s ease;
+}
+
+nav ul a:hover {
+  background-color: transparent !important;
+}
+
+a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  border-radius: 25px;
+  left: 0;
+  width: 100%;
+  border: 1.5px solid #fff;
+}
+
+.preloader-wrapper {
+  position: absolute !important;
+  left: calc(50% - 32px);
+  top: calc(50% - 32px);
+}
+
+.sidenav a {
+  width: 100% !important;
+  height: 50px !important;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.taskCard {
+  margin-bottom: 0px !important;
+}
+
+.sidenav #sort_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.sort_desktop input {
+  font-weight: 400;
+  font-family: 'Lato', BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.sidenav #sort_item:hover {
+  background-color: #F2F2F2;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.none-tasks {
+  background: #E8F5E9 !important;
+  color: black !important;
+}
+
+#modal1 h4 {
+  margin-bottom: 20px;
+}
+
+#modal1 p {
+  margin-left: 5px;
+}
+
+a.green.white-text {
+  margin-right: 10px !important;
+}
+
+.alert {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #F8D7DA;
+  color: rgb(158, 111, 115);
+  margin-bottom: 20px !important;
+  text-align: center;
+  border-radius: 8px;
+}
+
+
+.cricle_wrapper {
+  margin-top: 3px;
+  margin-left: 40px;
+  border: 2px solid #fff !important;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+.cricle_wrapper::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  left: -30px;
+}
+
+.cricle_wrapper::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  right: -30px;
+}
+
+.sort input.select-dropdown {
+  color: #fff;
+  border-color: transparent !important;
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 0 !important;
+  text-align: center;
+  width: 140px !important;
+}
+
+#sort_item {
+  height: 100%;
+}
+
+.dropdown-content li>span {
+  text-align: center;
+}
+
+#nav-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.sort ul {
+  overflow: hidden;
+}
+
+.caret {
+  fill: transparent !important;
+}
+
+.sidenav a {
+  font-weight: 400 !important;
+}
+
+#mobile-demo .sort input.select-dropdown {
+  color: black !important;
+  margin: 0 auto;
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+
+#mobile-demo li:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mobile-demo {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .notifications {
+    padding: 0px !important
+  }
+}
+
+@media screen and (max-height: 600px) {
+  #right a {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #right a {
+    display: none !important;
+  }
+}
+
+.marginTop-box {
+  margin-top: 12%;
+}
+
+.marginTop-task {
+  margin-top: 5%;
+}
+
+.marginTop-notif {
+  margin-top: 8%;
+}
