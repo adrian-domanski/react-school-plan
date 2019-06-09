@@ -1,6 +1,6 @@
-### Live demo: https://plan-szkolny.firebaseapp.com/home<br>
-## Email: example@gmail.com<br>
-## Password: toor123<br>
+## Live demo: https://plan-szkolny.firebaseapp.com/home<br>
+### Email: example@gmail.com<br>
+### Password: toor123<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
