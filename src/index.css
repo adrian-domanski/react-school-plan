@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Lato", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +27,11 @@ nav {
 }
 
 .select-wrapper input.select-dropdown {
-  color: #9E9EAB;
+  color: #9e9eab;
 }
 
 .select-active {
-  border-bottom: 2px solid #4CAF50 !important;
+  border-bottom: 2px solid #4caf50 !important;
 }
 
 #right {
@@ -44,7 +44,7 @@ nav {
   top: 30vh;
 }
 
-#right>a {
+#right > a {
   width: 80px;
   text-align: center;
   background-color: #3b5998;
@@ -76,7 +76,7 @@ span.task_eko {
 }
 
 span.task_info {
-  color: #2196F3 !important;
+  color: #2196f3 !important;
 }
 
 .task_eko {
@@ -89,7 +89,7 @@ span.task_info {
 
 a.active {
   position: relative;
-  transition: color .5s ease;
+  transition: color 0.5s ease;
 }
 
 nav ul a:hover {
@@ -97,7 +97,7 @@ nav ul a:hover {
 }
 
 a.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   border-radius: 25px;
@@ -137,13 +137,13 @@ a.active::after {
 
 .sort_desktop input {
   font-weight: 400;
-  font-family: 'Lato', BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Lato", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
 .sidenav #sort_item:hover {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .text-bold {
@@ -151,7 +151,7 @@ a.active::after {
 }
 
 .none-tasks {
-  background: #E8F5E9 !important;
+  background: #e8f5e9 !important;
   color: black !important;
 }
 
@@ -170,13 +170,12 @@ a.green.white-text {
 .alert {
   width: 100%;
   padding: 10px 20px;
-  background-color: #F8D7DA;
+  background-color: #f8d7da;
   color: rgb(158, 111, 115);
   margin-bottom: 20px !important;
   text-align: center;
   border-radius: 8px;
 }
-
 
 .cricle_wrapper {
   margin-top: 3px;
@@ -192,7 +191,7 @@ a.green.white-text {
 }
 
 .cricle_wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 30px;
   height: 2px;
@@ -201,7 +200,7 @@ a.green.white-text {
 }
 
 .cricle_wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 30px;
   height: 2px;
@@ -223,7 +222,7 @@ a.green.white-text {
   height: 100%;
 }
 
-.dropdown-content li>span {
+.dropdown-content li > span {
   text-align: center;
 }
 
@@ -263,7 +262,7 @@ a.green.white-text {
 
 @media only screen and (max-width: 600px) {
   .notifications {
-    padding: 0px !important
+    padding: 0px !important;
   }
 }
 
@@ -289,4 +288,19 @@ a.green.white-text {
 
 .marginTop-notif {
   margin-top: 8%;
+}
+
+/* Plan Lekcji */
+.plan {
+  width: 100%;
+  height: 100%;
+  margin-top: 10vh;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-img {
+  box-shadow: 0 0 20px 5px #0000004b;
 }
