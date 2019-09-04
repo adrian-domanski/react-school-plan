@@ -26,7 +26,6 @@ class Notification extends React.Component {
 
   render() {
     const { notif, id, text_date, date } = this.props;
-    // console.log(date);
     let format_date = document.createElement("span");
     let lessThanWeek = false;
     let weekDay = null;

@@ -34,7 +34,6 @@ class Task extends React.Component {
         break;
       case "e":
         addClass = "task_eko";
-
         break;
       default:
         addClass = "task_all";
