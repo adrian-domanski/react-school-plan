@@ -30,9 +30,7 @@ class Navbar extends React.Component {
         <nav>
           <div className="nav-wrapper">
             <Link to="/home" className="brand-logo left">
-              <div className="cricle_wrapper">
-                <span>3Ei</span>
-              </div>
+              <span className="logo">Plan 3Ei</span>
             </Link>
             <a
               href="#!"

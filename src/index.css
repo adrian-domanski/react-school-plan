@@ -177,37 +177,6 @@ a.green.white-text {
   border-radius: 8px;
 }
 
-.cricle_wrapper {
-  margin-top: 3px;
-  margin-left: 40px;
-  border: 2px solid #fff !important;
-  height: 60px;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  position: relative;
-}
-
-.cricle_wrapper::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  left: -30px;
-}
-
-.cricle_wrapper::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  right: -30px;
-}
-
 .sort input.select-dropdown {
   color: #fff;
   border-color: transparent !important;
@@ -303,4 +272,24 @@ a.green.white-text {
 
 .plan-img {
   box-shadow: 0 0 20px 5px #0000004b;
+}
+
+/* Logo */
+span.logo {
+  margin-left: 2rem;
+}
+
+.brand-logo {
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  text-align: center;
+}
+
+.notif-title {
+  margin-bottom: 1rem !important;
 }

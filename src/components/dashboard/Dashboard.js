@@ -156,7 +156,9 @@ export class Dashboard extends Component {
               <div className="col s12 m6 notifications">
                 <div className="card blue-grey darken-1 notifications">
                   <div className="card-content white-text">
-                    <span className="card-title">Ważne informacje:</span>
+                    <span className="card-title notif-title">
+                      Ważne informacje:
+                    </span>
                     <div className="card-action">{notificationsList}</div>
                   </div>
                 </div>
