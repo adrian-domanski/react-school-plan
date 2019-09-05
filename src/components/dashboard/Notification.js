@@ -25,7 +25,7 @@ class Notification extends React.Component {
   };
 
   render() {
-    const { notif, id, text_date, date } = this.props;
+    const { notif, text_date, date } = this.props;
     let format_date = document.createElement("span");
     let lessThanWeek = false;
     let weekDay = null;
@@ -54,17 +54,20 @@ class Notification extends React.Component {
     format_date.innerHTML = `(<span style='color: lightgreen'>${inp_day}</span>/<span style='color: lightgreen'>${inp_month}</span>/<span style='color: lightgreen'>${inp_year}</span>)`;
 
     return (
-      <p onClick={() => this.props.handleNotifAdmin(notif)}>
-        {id}. {notif.content}{" "}
+      <p
+        style={{ marginBottom: "1rem" }}
+        onClick={() => this.props.handleNotifAdmin(notif)}>
         {
-          <span style={{ marginLeft: "6px" }}>
+          <span>
             {!lessThanWeek ? (
               Parser(format_date.innerHTML)
             ) : (
               <span style={{ color: color }}>{weekDay}</span>
             )}
+            <br />
           </span>
         }
+        {notif.content}{" "}
       </p>
     );
   }

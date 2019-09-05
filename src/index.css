@@ -293,3 +293,7 @@ span.logo {
 .notif-title {
   margin-bottom: 1rem !important;
 }
+
+.card-content {
+  font-size: 17px;
+}

@@ -115,7 +115,7 @@ export class Dashboard extends Component {
             handleNotifAdmin={this.handleNotifAdmin}
             key={notif.id}
             notif={notif}
-            id={index + 1}
+            // id={index + 1}
             date={notif.date}
             text_date={notif.text_date}
           />
@@ -134,7 +134,7 @@ export class Dashboard extends Component {
         {tasks ? (
           <div className="container">
             <div className="row">
-              <div className="col s12 m6 taskList">
+              <div className="col s12 l6 taskList">
                 {tasksList.length ? (
                   tasksList
                 ) : (
@@ -153,7 +153,7 @@ export class Dashboard extends Component {
                 )}
               </div>
 
-              <div className="col s12 m6 notifications">
+              <div className="col s12 l6 notifications">
                 <div className="card blue-grey darken-1 notifications">
                   <div className="card-content white-text">
                     <span className="card-title notif-title">
