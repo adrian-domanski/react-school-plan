@@ -126,6 +126,18 @@ a.active::after {
 
 .taskCard {
   margin-bottom: 0px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgModel {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 10px;
+  transform: rotate(-20deg);
+  max-width: 100px;
+  opacity: 0.3;
 }
 
 .sidenav #sort_item {
@@ -241,9 +253,19 @@ a.green.white-text {
   }
 }
 
+.sadMario {
+  max-width: 200px !important;
+}
+
 @media screen and (max-width: 600px) {
   #right a {
     display: none !important;
+  }
+  .sadMario {
+    width: 50%;
+  }
+  .bgModel {
+    max-width: 80px;
   }
 }
 

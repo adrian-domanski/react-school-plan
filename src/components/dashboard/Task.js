@@ -1,6 +1,9 @@
 import React from "react";
 import moment from "moment";
 import Parser from "html-react-parser";
+import red from "../../img/Chars/red.png";
+import blue from "../../img/Chars/blue.png";
+import green from "../../img/Chars/green.png";
 
 class Task extends React.Component {
   state = {
@@ -46,16 +49,20 @@ class Task extends React.Component {
   render() {
     const { links, task, groupName, id_group, text_date, date } = this.props;
     let addClass = "";
+    let img = null;
 
     switch (id_group) {
       case "i":
         addClass = "task_info";
+        img = blue;
         break;
       case "e":
         addClass = "task_eko";
+        img = green;
         break;
       default:
         addClass = "task_all";
+        img = red;
         break;
     }
 
@@ -128,6 +135,7 @@ class Task extends React.Component {
               }
             </span>
           </div>
+          <img src={img} className="bgModel" alt="Mario character background" />
         </div>
       </div>
     ) : (
