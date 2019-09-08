@@ -3,6 +3,9 @@ import moment from "moment";
 import Parser from "html-react-parser";
 
 class Task extends React.Component {
+  state = {
+    clickTimer: null
+  };
   getDay = nr => {
     switch (nr) {
       case 1:
@@ -24,8 +27,24 @@ class Task extends React.Component {
     }
   };
 
+  // Mouse press and hold event
+  handleMouseDown = () => {
+    const { task, handleTaskAdmin } = this.props;
+    this.setState({
+      clickTimer: setTimeout(() => {
+        handleTaskAdmin(task);
+      }, 2000)
+    });
+  };
+
+  handleMouseUp = () => {
+    const { clickTimer } = this.state;
+    clearTimeout(clickTimer);
+  };
+  // - - - - - - - - - - -
+
   render() {
-    const { task, groupName, id_group, text_date, date } = this.props;
+    const { links, task, groupName, id_group, text_date, date } = this.props;
     let addClass = "";
 
     switch (id_group) {
@@ -66,13 +85,35 @@ class Task extends React.Component {
     }`;
     format_date.innerHTML = `<span className=${addClass}><span style='color: black'>${inp_day}</span>/<span style='color: black'>${inp_month}</span>/<span style='color: black'>${inp_year}</span></span>`;
 
+    // Render Links
+
+    const allLinks =
+      links && links.length ? (
+        <div className="card-action links">
+          {links.map(link => (
+            <a
+              key={link._id}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={`${addClass} link`}
+              href={link.href}>
+              - - [Link {link._id + 1}] - -
+            </a>
+          ))}
+        </div>
+      ) : null;
+
     return text_date !== undefined ? (
-      <div className="row" onClick={() => this.props.handleTaskAdmin(task)}>
+      <div
+        className="row"
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}>
         <div className={`card taskCard ${addClass}`}>
           <div className="card-content">
             <span className="card-title">{task.title}</span>
             <p>{task.content}</p>
           </div>
+          {allLinks}
           <div className="card-action">
             <span className="green-text">
               {groupName}{" "}

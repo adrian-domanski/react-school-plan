@@ -88,6 +88,7 @@ export class Dashboard extends Component {
                 id_group={task.group}
                 text_date={task.text_date}
                 date={task.date}
+                links={task.links}
               />
             );
           }
@@ -101,6 +102,7 @@ export class Dashboard extends Component {
               id_group={task.group}
               text_date={task.text_date}
               date={task.date}
+              links={task.links}
             />
           );
         }
@@ -118,6 +120,7 @@ export class Dashboard extends Component {
             // id={index + 1}
             date={notif.date}
             text_date={notif.text_date}
+            links={notif.links}
           />
         );
       });

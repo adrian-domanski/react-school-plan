@@ -3,6 +3,10 @@ import Parser from "html-react-parser";
 import moment from "moment";
 
 class Notification extends React.Component {
+  state = {
+    clickTimer: null
+  };
+
   getDay = nr => {
     switch (nr) {
       case 1:
@@ -24,8 +28,24 @@ class Notification extends React.Component {
     }
   };
 
+  // Mouse press and hold event
+  handleMouseDown = () => {
+    const { notif, handleNotifAdmin } = this.props;
+    this.setState({
+      clickTimer: setTimeout(() => {
+        handleNotifAdmin(notif);
+      }, 2000)
+    });
+  };
+
+  handleMouseUp = () => {
+    const { clickTimer } = this.state;
+    clearTimeout(clickTimer);
+  };
+  // - - - - - - - - - - -
+
   render() {
-    const { notif, text_date, date } = this.props;
+    const { notif, text_date, date, links } = this.props;
     let format_date = document.createElement("span");
     let lessThanWeek = false;
     let weekDay = null;
@@ -53,10 +73,29 @@ class Notification extends React.Component {
 
     format_date.innerHTML = `(<span style='color: lightgreen'>${inp_day}</span>/<span style='color: lightgreen'>${inp_month}</span>/<span style='color: lightgreen'>${inp_year}</span>)`;
 
+    // Render Links
+
+    const allLinks =
+      links && links.length ? (
+        <div className="links">
+          {links.map(link => (
+            <a
+              key={link._id}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="notif-link"
+              href={link.href}>
+              - - [ Link {link._id + 1} ] - -
+            </a>
+          ))}
+        </div>
+      ) : null;
+
     return (
-      <p
+      <div
         style={{ marginBottom: "1rem" }}
-        onClick={() => this.props.handleNotifAdmin(notif)}>
+        onMouseDown={this.handleMouseDown}
+        onMouseUp={this.handleMouseUp}>
         {
           <span>
             {!lessThanWeek ? (
@@ -67,8 +106,8 @@ class Notification extends React.Component {
             <br />
           </span>
         }
-        {notif.content}{" "}
-      </p>
+        {notif.content} {allLinks}
+      </div>
     );
   }
 }

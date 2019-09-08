@@ -9,25 +9,66 @@ export class addTask extends Component {
     title: "",
     content: "",
     date: "",
-    group: ""
+    group: "",
+    links: []
   };
 
-  handleChange = e => {
+  componentDidMount() {
+    initStyle();
+  }
+
+  handleChange = (e, type = "default") => {
     const { value, name } = e.target;
+
+    if (type === "default") {
+      this.setState({
+        [name]: value
+      });
+    } else if (type === "link") {
+      const tempLinks = this.state.links;
+      tempLinks.forEach(link => {
+        if (link.id === name) {
+          link.href = value;
+        }
+      });
+
+      this.setState({ links: tempLinks });
+    }
+  };
+
+  addNewLink = e => {
+    e.preventDefault();
+    const { links } = this.state;
+    const newLink = {
+      _id: links.length,
+      id: `Link_${links.length}`,
+      href: ""
+    };
+
     this.setState({
-      [name]: value
+      links: [...links, newLink]
     });
+  };
+
+  isValidLink = link => {
+    //eslint-disable-next-line
+    const expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
+
+    const regex = new RegExp(expression);
+    if (link.match(regex)) return true;
+    else return false;
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    const { title, content, group } = this.state;
+    const { title, content, group, links } = this.state;
     const date_value = document.getElementById("data_picker").value;
     const inp_day = `${date_value[0]}${date_value[1]}`;
     const inp_month = `${date_value[3]}${date_value[4]}`;
     const inp_year = `${date_value[6]}${date_value[7]}${date_value[8]}${
       date_value[9]
     }`;
+    let err = false;
     const reverse_date = `${inp_month}/${inp_day}/${inp_year}`;
     const date_obj = new Date(reverse_date);
     new Promise(resolve => {
@@ -38,11 +79,16 @@ export class addTask extends Component {
       const now = new Date();
       let difference = date_obj - now;
       const modals = initStyle("modal");
+      // Check if all links have correct href
+      links.forEach(link => {
+        if (!this.isValidLink(link.href)) err = true;
+      });
       if (
         title !== "" &&
         content !== "" &&
         date_obj.getDay().toString() !== "NaN" &&
         group !== "" &&
+        !err &&
         difference > -100000000
       ) {
         this.props.createTask(this.state);
@@ -53,12 +99,22 @@ export class addTask extends Component {
     });
   };
 
-  componentDidMount() {
-    initStyle();
-  }
-
   render() {
-    const { content, title, group } = this.state;
+    const { content, title, group, links } = this.state;
+    const currLinks = links.length
+      ? links.map(link => (
+          <div key={link.id} className="input-field col s12">
+            <input
+              id={link.id}
+              type="text"
+              name={link.id}
+              onChange={e => this.handleChange(e, "link")}
+              className="validate"
+            />
+            <label htmlFor={link.id}>Link {link._id}</label>
+          </div>
+        ))
+      : null;
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to="/home" />;
     return (
@@ -118,6 +174,19 @@ export class addTask extends Component {
                         <option value={"i"}>Informatycy</option>
                         <option value={"e"}>Ekonomiści</option>
                       </select>
+                    </div>
+
+                    {/* Links */}
+                    <div className="input-field col s12">
+                      {/* Render current links */}
+                      {currLinks}
+                      {/* Add new link */}
+                      <a
+                        href="!#"
+                        onClick={this.addNewLink}
+                        className="btn-floating btn-large waves-effect waves-light red">
+                        <i className="material-icons">add</i>
+                      </a>
                     </div>
                   </div>
                   <button

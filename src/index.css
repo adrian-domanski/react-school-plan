@@ -297,3 +297,20 @@ span.logo {
 .card-content {
   font-size: 17px;
 }
+
+/* Links */
+.link {
+  color: purple !important;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+}
+
+.notif-link {
+  margin: 0 !important;
+  color: aqua !important;
+}
+
+.links {
+  padding-bottom: 0;
+}
