@@ -6,6 +6,7 @@ import M from "materialize-css";
 export class SignedInLinks extends Component {
   componentDidMount() {
     initStyle("nav");
+    M.AutoInit();
   }
 
   closeSide = type => {
@@ -24,9 +25,6 @@ export class SignedInLinks extends Component {
     if (type === "mobile") classes = "sidenav-close";
     return (
       <React.Fragment>
-        <li className={classes}>
-          <NavLink to="/home">Strona Główna</NavLink>{" "}
-        </li>
         <li className={classes}>
           <NavLink to="/plan_lekcji">Plan Lekcji</NavLink>
         </li>

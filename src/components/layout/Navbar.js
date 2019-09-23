@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { initStyle } from "../../store/actions/initStyle";
 import { connect } from "react-redux";
 import { logOut } from "../../store/actions/authActions";
 import SignedInLinks from "../Links/SignedInLinks";
 import SignedOutLinks from "../Links/SignedOutLinks";
+import M from "materialize-css";
 
 class Navbar extends React.Component {
   state = {
@@ -13,6 +14,7 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     initStyle("nav");
+    M.AutoInit();
   }
 
   handleChange = e => {
@@ -40,6 +42,34 @@ class Navbar extends React.Component {
             </a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               {/* Menu w zależności czy zalogowany czy nie */}
+              <li>
+                <NavLink to="/home">Strona Główna</NavLink>{" "}
+              </li>
+              <ul id="dropdown1" className="dropdown-content">
+                <li>
+                  <Link className="center-align" to="/zastepstwa/0">
+                    Dzisiaj
+                  </Link>
+                </li>
+                <li>
+                  <Link className="center-align" to="/zastepstwa/1">
+                    Jutro
+                  </Link>
+                </li>
+                <li>
+                  <Link className="center-align" to="/zastepstwa/2">
+                    Pojutrze
+                  </Link>
+                </li>
+              </ul>
+              <li>
+                <a
+                  className="dropdown-trigger"
+                  href="#!"
+                  data-target="dropdown1">
+                  Zastępstwa
+                </a>
+              </li>
               {this.props.auth.uid ? (
                 <SignedInLinks
                   type={"desktop"}

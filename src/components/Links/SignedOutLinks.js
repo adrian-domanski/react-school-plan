@@ -36,9 +36,6 @@ export class SignedOutLinks extends Component {
     return (
       <React.Fragment>
         <li className={classes}>
-          <NavLink to="/home">Strona Główna</NavLink>{" "}
-        </li>
-        <li className={classes}>
           <NavLink to="/plan_lekcji">Plan Lekcji</NavLink>
         </li>
         <li>

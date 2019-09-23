@@ -10,6 +10,7 @@ import Fb from "./components/layout/Fb";
 import signIn from "./components/Links/signIn";
 import LessonPlan from "./components/Links/LessonPlan";
 import e404 from "./components/Links/e404";
+import Replacement from "./components/Links/Replacement";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/dodaj_powiadomienie" component={addNotif} />
           <Route path="/zaloguj" component={signIn} />
           <Route path="/plan_lekcji" component={LessonPlan} />
+          <Route path="/zastepstwa/:day" component={Replacement} />
           <Route component={e404} />
         </Switch>
       </div>
