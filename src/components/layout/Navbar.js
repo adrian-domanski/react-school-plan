@@ -93,7 +93,7 @@ class Navbar extends React.Component {
           <li>
             <NavLink to="/home">Strona Główna</NavLink>{" "}
           </li>
-          <ul id="dropdown1" className="dropdown-content">
+          <ul id="dropdown2" className="dropdown-content">
             <li>
               <Link className="center-align" to="/zastepstwa/0">
                 Dzisiaj
@@ -111,7 +111,7 @@ class Navbar extends React.Component {
             </li>
           </ul>
           <li>
-            <a className="dropdown-trigger" href="#!" data-target="dropdown1">
+            <a className="dropdown-trigger" href="#!" data-target="dropdown2">
               Zastępstwa
             </a>
           </li>
