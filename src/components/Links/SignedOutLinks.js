@@ -10,7 +10,10 @@ export class SignedOutLinks extends Component {
     const links = Array.from(document.querySelectorAll("li"));
     links.forEach(link => {
       sideNav = initStyle("nav");
-      if (link.firstChild.id !== "sort_item") {
+      if (
+        link.firstChild.id !== "sort_item" &&
+        link.firstChild.className !== "dropdown-trigger"
+      ) {
         link.addEventListener("click", () => {
           sideNav = initStyle("nav");
           sideNav.forEach(item => item.close());

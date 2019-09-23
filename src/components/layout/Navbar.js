@@ -90,6 +90,31 @@ class Navbar extends React.Component {
 
         <ul className="sidenav" id="mobile-demo">
           <h1>Menu</h1>
+          <li>
+            <NavLink to="/home">Strona Główna</NavLink>{" "}
+          </li>
+          <ul id="dropdown1" className="dropdown-content">
+            <li>
+              <Link className="center-align" to="/zastepstwa/0">
+                Dzisiaj
+              </Link>
+            </li>
+            <li>
+              <Link className="center-align" to="/zastepstwa/1">
+                Jutro
+              </Link>
+            </li>
+            <li>
+              <Link className="center-align" to="/zastepstwa/2">
+                Pojutrze
+              </Link>
+            </li>
+          </ul>
+          <li>
+            <a className="dropdown-trigger" href="#!" data-target="dropdown1">
+              Zastępstwa
+            </a>
+          </li>
           {this.props.auth.uid ? (
             <SignedInLinks
               type={"mobile"}
